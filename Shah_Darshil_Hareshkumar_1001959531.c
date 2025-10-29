@@ -384,9 +384,10 @@ void processmsg()
         if (checksum_check())
         {
             if (rxdata[6] == 1)
+            {
                 putsUart0("I am here");
-
                 PWM1_3_CMPB_R = 230;
+            }
             else
                 PWM1_3_CMPB_R = 0;
             if ((rxdata[3] & 0x80) == 0x80)
